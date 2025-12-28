@@ -1,0 +1,24 @@
+# System
+.DS_Store
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# Data & Models (Large files)
+data/
+monitoring/data/
+notebooks/data/
+notebooks/processors/
+notebooks/*.pkl
+*.pkl
+
+# IDE
+.vscode/
+.idea/
+
+# Jenkins
+Jenkins/jenkins_home/
