@@ -1,0 +1,14 @@
+{
+  "model_name": "Best_Severity_Voting_Soft",
+  "version": "1.0.0",
+  "stage": "production",
+  "registered_at": "2025-12-26T17:10:43.234618",
+  "metrics": {
+    "Accuracy": 0.90615,
+    "Precision": 0.49506947464071427,
+    "Recall": 0.5090504092908197,
+    "F1-Score": 0.500544963717551,
+    "ROC-AUC": 0.8506371688223269
+  },
+  "run_id": "7685da7408c14aefa7c609a693afb259"
+}

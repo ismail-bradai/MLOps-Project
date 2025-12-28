@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: backend:latest  # Uses local image
+        imagePullPolicy: IfNotPresent  # Important for local 'docker build' images
+        ports:
+        - containerPort: 8000
+        volumeMounts:
+        - name: model-registry
+          mountPath: /app/model_registry
+          readOnly: true
+      volumes:
+      - name: model-registry
+        hostPath:
+          # MINIKUBE: Use minikube mount to share host directory
+          # Run: minikube mount ~/MLOps/notebooks/model_registry:/data/model_registry
+          path: /data/model_registry
+          type: Directory
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+spec:
+  selector:
+    app: backend
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+  type: ClusterIP

@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+pandas
+numpy
+mlflow
+scikit-learn
+imbalanced-learn
+python-dotenv
+pydantic
+python-multipart
+matplotlib
+seaborn
+# Test dependencies
+pytest
+httpx

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: file-copier
+spec:
+  containers:
+  - name: copier
+    image: busybox
+    command: ['sleep', '3600']
+    volumeMounts:
+    - name: data-dir
+      mountPath: /data
+  volumes:
+  - name: data-dir
+    hostPath:
+      path: /data
+      type: DirectoryOrCreate
